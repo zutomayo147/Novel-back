@@ -6,7 +6,6 @@ import os
 # import environ
 # env = environ.Env()
 # env.read_env(".env")
-# SECRET_KEY = env("SECRET_KEY")
 # BASE_DIR = Path(__file__).resolve().parent.parent.parent
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-d62*89_^dag(j)0%)v4ztuz&*$hxivmni@-@5a#so3-miw1_oz"
+# SECRET_KEY = "django-insecure-d62*89_^dag(j)0%)v4ztuz&*$hxivmni@-@5a#so3-miw1_oz"
 
 # DEBUG = True
 
@@ -91,16 +90,16 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("JWT",),
 }
 
-MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+# MIDDLEWARE = [
+#     "corsheaders.middleware.CorsMiddleware",
+#     "django.middleware.common.CommonMiddleware",
+#     "django.middleware.security.SecurityMiddleware",
+#     "django.contrib.sessions.middleware.SessionMiddleware",
+#     "django.middleware.csrf.CsrfViewMiddleware",
+#     "django.contrib.auth.middleware.AuthenticationMiddleware",
+#     "django.contrib.messages.middleware.MessageMiddleware",
+#     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+# ]
 
 ROOT_URLCONF = "config.urls"
 
@@ -128,13 +127,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 # for vercel
 # DATABASES = {}
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-        # "ATOMIC_REQUESTS": True,
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#         # "ATOMIC_REQUESTS": True,
+#     }
+# }
 
 
 # Password validation
@@ -171,5 +170,8 @@ USE_TZ = True
 
 
 STATIC_URL = "/static/"
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+

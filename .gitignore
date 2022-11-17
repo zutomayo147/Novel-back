@@ -1,0 +1,40 @@
+# front
+node_modules
+.next
+
+# back
+.venv
+.direnv
+fixture/*.json
+/**/migrations/*.py
+# bavk/**/__pycache__/*.pyc
+
+!/config/media/
+/config/media/*
+!/config/media/.gitkeep
+
+__pycache__
+media/
+back/config/media/remote_repo
+!__init__.py
+
+# production
+/build
+
+# misc
+.DS_Store
+# db.sqlite3
+*.sqlite3
+
+# local env files
+# .env*.local
+.env.product
+.env
+.envrc
+# back/.envrc
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts

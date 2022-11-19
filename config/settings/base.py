@@ -7,14 +7,14 @@ import os
 # env = environ.Env()
 # env.read_env(".env")
 # BASE_DIR = Path(__file__).resolve().parent.parent.parent
-BASE_DIR = Path(__file__).resolve().parent.parent,
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "django-insecure-d62*89_^dag(j)0%)v4ztuz&*$hxivmni@-@5a#so3-miw1_oz"
+SECRET_KEY = "django-insecure-d62*89_^dag(j)0%)v4ztuz&*$hxivmni@-@5a#so3-miw1_oz"
 
 # DEBUG = True
 
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
@@ -127,13 +129,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 # for vercel
 # DATABASES = {}
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#         # "ATOMIC_REQUESTS": True,
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        # "ATOMIC_REQUESTS": True,
+    }
+}
 
 
 # Password validation
@@ -172,5 +174,4 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = str(BASE_DIR / "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

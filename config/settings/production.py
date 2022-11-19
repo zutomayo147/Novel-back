@@ -1,13 +1,13 @@
 from .base import *
 import os
-import environ
-from decouple import config
-from dj_database_url import parse as dburl
+# import environ
+# from decouple import config
+# from dj_database_url import parse as dburl
 
 DEBUG = False
 
-env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, ".env"))
+# env = environ.Env()
+# env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
 # INSTALLED_APPS += [
@@ -31,10 +31,10 @@ TEMPLATES = [
         },
     },
 ]
-SECRET_KEY = env("SECRET_KEY")
-SUPERUSER_NAME = env("SUPERUSER_NAME")
-SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
-SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
+# SECRET_KEY = env("SECRET_KEY")
+# SUPERUSER_NAME = env("SUPERUSER_NAME")
+# SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
+# SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -48,11 +48,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
-
-DATABASES = {
-    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
-}
+# default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+#
+# DATABASES = {
+#     "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
+# }
 
 
 # REST_FRAMEWORK = {
